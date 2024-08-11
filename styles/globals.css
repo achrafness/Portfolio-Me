@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .custom-container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .custom-container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .custom-container {
+    width: 1170px;
+  }
+}
+
+@font-face {
+  font-family: "Power Grotesk";
+  src: url("/fonts/PowerGrotesk-Regular.ttf") format("truetype");
+}
+
+* {
+  font-family: "Power Grotesk", sans-serif;
+}
+
+/* start home */
+.hero > div {
+  background: linear-gradient(
+    rgba(19, 32, 38, 0.35) 0%,
+    rgba(110, 60, 217, 0.35) 100%
+  );
+}
+.navbar {
+  box-shadow: 0px 0px 20px #070c0f;
+  border-radius: 20px;
+}
+.navbar ul li:hover {
+  color: #f20675;
+  transition: 0.2s ease-out;
+}
+/* end home  */
+.project {
+  border: 1px solid #37545f;
+  box-shadow: 0px 0px 20px #070c0f;
+}
