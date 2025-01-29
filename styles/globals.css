@@ -56,3 +56,48 @@
   border: 1px solid #37545f;
   box-shadow: 0px 0px 20px #070c0f;
 }
+
+.borders-gray {
+  border-top: 3px solid #37545f;
+  border-bottom: 3px solid #37545f;
+  z-index: 2;
+}
+.borders-gray-top {
+  border-top: 3px solid #37545f;
+  z-index: 2;
+}
+.borders-gray-bottom {
+  border-bottom: 3px solid #37545f;
+  z-index: 2;
+}
+.bg-grid {
+  background-image: url("../public/images/grid.png");
+}
+
+.input-contact {
+  border: 1px solid #37545f;
+  box-shadow: 0px 0px 20px #070c0f;
+  border-radius: 20px;
+  background: linear-gradient(0deg, #132026, #132026), #d9d9d9;
+}
+
+.input-contact::placeholder {
+  font-size: 25px;
+  line-height: 36px;
+  color: #37545f;
+}
+
+.input-contact:focus {
+  outline: none;
+}
+.input-contact:focus .input-contact::placeholder {
+  color: transparent;
+}
+
+.skill {
+  background: #132026;
+  border: 1px solid #37545f;
+  box-shadow: 0px 0px 20px #070c0f;
+  border-radius: 20px;
+  height: 150px;
+}

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import prototyping from "@/public/images/prototyping.gif"
-const Greetings = () => {
+const HeroProjects = () => {
     return (
         <div className="flex mx-16 py-8">
             <div className="flex w-1/2 justify-center items-center">
@@ -24,4 +24,4 @@ const Greetings = () => {
         </div>
     )
 }
-export default Greetings
+export default HeroProjects

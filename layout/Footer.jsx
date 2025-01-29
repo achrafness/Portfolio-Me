@@ -7,7 +7,7 @@ import Image from "next/image"
 const Footer = () => {
   const apps = [email, linkedin, github, facebook]
   return (
-    <div className="bg-mirage py-5 ">
+    <div className="bg-mirage py-5 borders-gray-top">
       <div className="px-32 flex justify-between items-center ">
         <div>
           <Logo />

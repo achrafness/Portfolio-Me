@@ -1,9 +1,11 @@
 import Navbar from "@/layout/Navbar";
-import Greetings from "./features/Greetings";
-import TechUsed from "./features/TechUsed";
-import WhoAmI from "./features/WhoAmI";
-import FeaturedProjects from "./features/FeaturedProjects";
-import Contact from "./features/Contact";
+import {
+  Contact,
+  Greetings,
+  FeaturedProjects,
+  WhoAmI,
+  TechUsed
+} from "@/features/home"
 const page = () => {
   return (
     <div className="home">

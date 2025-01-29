@@ -1,5 +1,8 @@
 import Navbar from "@/layout/Navbar"
-import HeroProjects from "./features/HeroProjects"
+import {
+  HeroProjects,
+  Projects
+} from "@/features/projects"
 const page = () => {
   return (
     <div className="projects">
@@ -11,6 +14,7 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Projects />      
     </div>
   )
 }
