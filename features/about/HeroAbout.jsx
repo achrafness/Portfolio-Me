@@ -2,7 +2,7 @@ import Image from "next/image"
 import Achraf from "@/public/images/neon_photo.png"
 const HeroAbout = () => {
     return (
-        <div className="flex mx-16 py-8">
+        <div className="flex mx-16 py-8 h-full">
             <div className="flex w-1/2 justify-center items-center">
                 <Image
                     src={Achraf}
