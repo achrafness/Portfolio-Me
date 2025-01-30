@@ -26,7 +26,7 @@ const Education = () => {
           </div>
           <div className="flex flex-col items-center gap-6">
             <Image src={Nexus} height={52} />
-            <p>NEXUS Bejaia,Co-leader development team.</p>
+            <p>NEXUS Bejaia,leader development team.</p>
           </div>
         </div>
       </div>
