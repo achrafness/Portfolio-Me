@@ -4,8 +4,8 @@ const page = () => {
   return (
     <div className="projects">
       <div className="hero bg-mirage h-screen">
-        <div className="h-full">
-          <div className="py-8 h-full custom-container">
+          <div className="h-full">
+            <div className="py-8 h-full custom-container flex flex-col">
             <Navbar />
             <HeroAbout />
           </div>

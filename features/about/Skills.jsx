@@ -38,21 +38,26 @@ const Skills = () => {
   ];
 
   return (
-    <div className="bg-mirage py-12">
+    <div className="bg-mirage py-8 md:py-12">
       <div className="custom-container">
-        <h2 className="text-6xl text-purple-heart text-center mb-12">Skills</h2>
-        <div className="flex justify-center items-center gap-8">
-          <div className="w-1/2 flex flex-col gap-8">
+        <h2 className="text-4xl md:text-6xl text-purple-heart text-center mb-8 md:mb-12">
+          Skills
+        </h2>
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
+          {/* Skills List */}
+          <div className="w-full lg:w-1/2 flex flex-col gap-8">
             {skillsData.map((skill, index) => (
-              <Skill
-                key={skill.title}
-                title={skill.title}
-                skills={skill.skills}
-              />
+              <Skill key={skill.title} title={skill.title} skills={skill.skills} />
             ))}
           </div>
-          <div className="w-1/2">
-            <Image src={skillsAnimation} alt="Skills animation" />
+
+          {/* Animation Image */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <Image
+              src={skillsAnimation}
+              alt="Skills animation"
+              className="w-full max-w-[500px]"
+            />
           </div>
         </div>
       </div>

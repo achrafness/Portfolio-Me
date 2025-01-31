@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Cpu, Database, Settings, Bug, Network, Lock, Shield } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import debounce from "lodash.debounce";
 
 const Skill = ({ title, skills }) => {
@@ -37,10 +36,12 @@ const Skill = ({ title, skills }) => {
 
   return (
     <div>
-      <div className="flex items-center justify-center gap-2 mb-6">
-        <h3 className="text-2xl font-bold text-Pickled-Bluewoodapprox">{title}</h3>
+      <div className="flex items-center justify-center gap-2 mb-4 md:mb-6">
+        <h3 className="text-xl md:text-2xl font-bold text-Pickled-Bluewoodapprox">
+          {title}
+        </h3>
       </div>
-      <div className="skill flex items-center px-2">
+      <div className="skill flex items-center px-1 md:px-2 justify-between">
         <button
           onClick={handlePrevious}
           className="p-2 rounded-full text-purple-heart hover:bg-gray-100"
@@ -48,27 +49,23 @@ const Skill = ({ title, skills }) => {
         >
           <ChevronLeft size={24} />
         </button>
-        <div className="w-full flex justify-between gap-4 px-4">
-          <AnimatePresence mode="wait">
-            {visibleSkills.map((skill, index) => {
-              const IconComponent = iconComponents[skill.iconName];
-              return (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, x: index === 0 ? -50 : index === 2 ? 50 : 0 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: index === 0 ? -50 : index === 2 ? 50 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className={`flex flex-col items-center gap-3 p-3 rounded-lg transition-colors duration-300 ${
-                    index === 1 ? "text-purple-heart" : "text-Pickled-Bluewoodapprox"
-                  }`}
-                >
-                  {IconComponent && <IconComponent size={42} className="flex-shrink-0" />}
-                  <p className="text-2xl font-medium text-center">{skill.name}</p>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+        <div className="w-4/5  flex justify-between items-center gap-2 md:gap-4 px-2 md:px-4">
+          {visibleSkills.map((skill, index) => {
+            const IconComponent = iconComponents[skill.iconName];
+            return (
+              <div
+                key={skill.name}
+                className={`flex flex-col items-center gap-2 md:gap-3 p-2 md:p-3 rounded-lg transition-colors duration-300 ${
+                  index === 1 ? "text-purple-heart" : "text-Pickled-Bluewoodapprox"
+                }`}
+              >
+                {IconComponent && <IconComponent size={32} className="flex-shrink-0" />}
+                <p className="text-sm md:text-xl font-medium text-center">
+                  {skill.name}
+                </p>
+              </div>
+            );      
+          })}
         </div>
         <button
           onClick={handleNext}
