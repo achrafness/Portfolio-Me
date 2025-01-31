@@ -5,7 +5,7 @@ const Projects = () => {
     return (
         <div className="bg-mirage text-center py-12 borders-gray-top">
             <div className="custom-container">
-                <div className="flex col-span-6 flex-wrap gap-8 justify-center items-center">
+                <div className="flex md:col-span-6 col-span-12 flex-wrap gap-8 justify-center items-center">
                 {projectsData.map((project, index) => (
                         <Project
                             key={index}
