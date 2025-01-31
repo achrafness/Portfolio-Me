@@ -34,37 +34,37 @@ const Certifications = () => {
           </h2>
           <div className="relative">
             {/* Vertical Line in the Middle */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 md:w-2 bg-purple-heart"></div>
+            <div className="hidden md:block   absolute left-1/2 transform -translate-x-1/2 h-full w-1 md:w-2 bg-purple-heart"></div>
   
             {/* Start Point */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 -top-2 w-4 h-4 md:w-6 md:h-6 bg-purple-heart rounded-full"></div>
+            <div className="hidden md:block  absolute left-1/2 transform -translate-x-1/2 -top-2 w-4 h-4 md:w-6 md:h-6 bg-purple-heart rounded-full"></div>
   
             {/* End Point */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 w-4 h-4 md:w-6 md:h-6 bg-purple-heart rounded-full"></div>
+            <div className="hidden md:block  absolute left-1/2 transform -translate-x-1/2 -bottom-2 w-4 h-4 md:w-6 md:h-6 bg-purple-heart rounded-full"></div>
   
             {/* Certifications */}
             <div className="space-y-8 md:space-y-16">
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className={`flex items-center ${cert.position === "left" ? "justify-start" : "justify-end"
+                  className={`flex items-center justify-center md:${cert.position === "left" ? "justify-start" : "justify-end"
                     }`}
                 >
                   {/* Timeline Content */}
                   <div
-                    className={`relative ${cert.position === "left" ? "pr-4 md:pr-8 text-right" : "pl-4 md:pl-8 text-left"
+                    className={`relative md:${cert.position === "left" ? "pr-4 md:pr-8 text-right" : "pl-4 md:pl-8 text-left"
                       } w-full md:w-[45%]`}
                   >
                     {/* Content Box */}
-                    <div className="bg-[rgba(19,32,38,0.8)] p-4 md:p-6 rounded-lg backdrop-blur-sm border border-purple-heart">
-                      <h3 className="text-white text-base md:text-lg font-medium mb-2 md:mb-3">
+                    <div className={`bg-[rgba(19,32,38,0.8)] ${cert.position === "left" ? "content-box-left" : "content-box-right"} p-4 md:p-6 rounded-lg backdrop-blur-sm border-2 border-purple-heart flex flex-col h-[200px] justify-between`}>
+                      <h3 className="text-white text-left text-xl  md:text-3xl font-medium mb-2 md:mb-3">
                         {cert.title}
                       </h3>
-                      <div className="flex justify-between text-xs md:text-sm text-purple-heart">
-                        <span className={cert.position === "right" ? "mr-auto" : "ml-auto"}>
+                      <div className="flex justify-between text-xs md:text-sm text-purple-heart w-full">
+                        <span >
                           {cert.organization}
                         </span>
-                        <span className={cert.position === "right" ? "ml-2 md:ml-4" : "mr-2 md:mr-4"}>
+                        <span>
                           {cert.date}
                         </span>
                       </div>
