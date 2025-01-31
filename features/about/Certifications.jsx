@@ -48,9 +48,8 @@ const Certifications = () => {
                                 {/* Timeline Content */}
                                 <div className={`relative ${cert.position === 'left' ? 'pr-8 text-right' : 'pl-8 text-left'
                                     } w-[45%]`}>
-
                                     {/* Content Box */}
-                                    <div className="bg-[rgba(19,32,38,0.8)] p-6 rounded-lg backdrop-blur-sm border border-[#37545F]/30">
+                                    <div className="bg-[rgba(19,32,38,0.8)] p-6 rounded-lg backdrop-blur-sm border border-purple-heart">
                                         <h3 className="text-white text-lg font-medium mb-3">
                                             {cert.title}
                                         </h3>

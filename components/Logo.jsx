@@ -7,7 +7,7 @@ const poppins = Poppins({
 
 const Logo = () => {
     return (
-        <div className={`${poppins.className} text-purple-heart text-3xl font-bold`}>
+        <div className={`${poppins.className} text-purple-heart text-2xl md:text-3xl font-bold`}>
             &lt; / Achraf &gt;
         </div>
     );

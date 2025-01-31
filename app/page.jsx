@@ -10,12 +10,12 @@ const page = () => {
   return (
     <div className="home">
       <div className="hero bg-mirage h-screen">
-        <div className="h-full">
-          <div className="py-8 h-full custom-container">
-            <Navbar />
-            <Greetings />
+          <div className="h-full">
+            <div className="py-8 h-full custom-container flex flex-col">
+              <Navbar />
+              <Greetings />
+            </div>
           </div>
-        </div>
       </div>
       <TechUsed/>
       <WhoAmI/>

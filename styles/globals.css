@@ -51,6 +51,10 @@
   color: #f20675;
   transition: 0.2s ease-out;
 }
+.navbar div ul li:hover {
+  color: #f20675;
+  transition: 0.2s ease-out;
+}
 /* end home  */
 .project {
   border: 1px solid #37545f;
