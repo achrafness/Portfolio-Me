@@ -1,10 +1,10 @@
-"use client"
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect } from "react";
 
 const Project = ({ title, description, images, interval = 3000 }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    // Function to handle automatic slideshow
+    // Automatic slideshow
     useEffect(() => {
         if (images.length > 1) {
             const timer = setInterval(() => {
@@ -15,7 +15,7 @@ const Project = ({ title, description, images, interval = 3000 }) => {
         }
     }, [images.length, interval]);
 
-    // Function to handle hover (switch to next image on hover)
+    // Change image on hover
     const handleHover = () => {
         if (images.length > 1) {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -23,10 +23,11 @@ const Project = ({ title, description, images, interval = 3000 }) => {
     };
 
     return (
-        <div className="rounded-3xl w-[500px] h-[620px] bg-mirage project text-white p-6">
+        <div className="rounded-3xl w-full sm:w-[400px] md:w-[500px] h-auto md:h-[620px] bg-mirage project text-white p-4 md:p-6">
+            {/* Image Container */}
             <div
-                className="w-[450px] h-[380px] bg-white rounded-lg overflow-hidden"
-                onMouseEnter={handleHover} // Change image on hover
+                className="w-full h-[250px] sm:h-[300px] md:h-[380px] bg-white rounded-lg overflow-hidden"
+                onMouseEnter={handleHover}
             >
                 {images.length > 0 && (
                     <img
@@ -36,13 +37,11 @@ const Project = ({ title, description, images, interval = 3000 }) => {
                     />
                 )}
             </div>
+
+            {/* Text Content */}
             <div className="text-start py-2">
-                <div className="text-[40px] text-purple-heart">
-                    <h1>{title}</h1>
-                </div>
-                <p className="text-2xl">
-                    {description}
-                </p>
+                <h1 className="text-3xl md:text-[40px] text-purple-heart">{title}</h1>
+                <p className="text-lg md:text-2xl mt-2">{description}</p>
             </div>
         </div>
     );

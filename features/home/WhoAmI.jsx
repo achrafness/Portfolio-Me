@@ -6,15 +6,19 @@ const WhoAmI = () => {
         <div className="who-am-i hero bg-mirage  relative w-full">
             <div className="h-full">
                 <div className="pt-12 pb-6 h-full custom-container text-white text-center">
-                    <h1 className="text-6xl">Who I am <span className="text-purple-heart">?</span></h1>
-                    <p className="text-4xl">
+                    <h1 className="md:text-6xl text-4xl">Who I am <span className="text-purple-heart">?</span></h1>
+                    <p className="text-xl md:text-4xl mx-auto pt-4">
                         I am Achraf, a computer science student with many interests, and a
                         broad set of skills that extend beyond the keyboard and screen.
                     </p>
-                    <Link href="/about" >
-                        <div className="flex items-center w-full justify-end mt-10 cursor-pointer">
-                            <p className="text-2xl text-right">about me</p>
-                            <Image src={aboutMe} sizes="10px" />
+                    <Link href="/about">
+                        <div className="flex items-center justify-center md:justify-end mt-8 md:mt-10 cursor-pointer">
+                            <p className="text-xl md:text-2xl text-right mr-2">about me</p>
+                            <Image
+                                src={aboutMe}
+                                alt="About Me Arrow"
+                                className="w-6  h-6 md:w-10 md:h-10"
+                            />
                         </div>
                     </Link>
                 </div>

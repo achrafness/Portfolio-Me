@@ -1,13 +1,32 @@
 const ContactForm = () => {
   return (
     <form action="">
-      <div className="flex justify-between gap-6 ">
-        <input type="text" placeholder="enter your name " className="w-1/2 input-contact py-6 px-10" />
-        <input type="text" placeholder="enter your email address " className="w-1/2 input-contact py-6 px-10"/>
+      {/* Name and Email Inputs */}
+      <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-6">
+        <input
+          type="text"
+          placeholder="Enter your name"
+          className="w-full md:w-1/2 input-contact py-4 md:py-6 px-6 md:px-10"
+        />
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          className="w-full md:w-1/2 input-contact py-4 md:py-6 px-6 md:px-10"
+        />
       </div>
-      <input type="text" placeholder="type your message..." className="text-start input-contact w-full my-4 min-h-72 "/>
-      <button className="m-6 bg-purple-heart py-4 px-8 text-2xl text-white rounded-xl">Sumbit</button>
+
+      {/* Message Input */}
+      <textarea
+        placeholder="Type your message..."
+        className="text-start input-contact w-full my-4 min-h-48 md:min-h-72 p-6 md:p-10"
+      />
+
+      {/* Submit Button */}
+      <button className="m-4 md:m-6 bg-purple-heart py-3 md:py-4 px-6 md:px-8 text-xl md:text-2xl text-white rounded-xl hover:bg-purple-700 transition-colors">
+        Submit
+      </button>
     </form>
-  )
-}
-export default ContactForm
+  );
+};
+
+export default ContactForm; 
