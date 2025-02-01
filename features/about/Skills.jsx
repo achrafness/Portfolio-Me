@@ -53,11 +53,17 @@ const Skills = () => {
 
           {/* Animation Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
-            <Image
-              src={skillsAnimation}
-              alt="Skills animation"
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full max-w-[500px]"
-            />
+            >
+              <source src="/videos/skills_animation.webm" type="video/webm" />              
+              <img src="/images/skills_animation.gif" alt="skills_animation animation" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>

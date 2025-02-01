@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Programmer from "../../public/images/programmer.gif";
 import TypewriterComponent from "@/components/TypewriterComponent";
 
 const Greetings = () => {
@@ -17,13 +15,17 @@ const Greetings = () => {
 
       {/* Image Section */}
       <div className="flex w-full md:w-1/2 justify-center items-center">
-        <Image
-          src={Programmer}
-          height="500"
-          width="500"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="size-[300px] md:size-[400px]"
-          alt="Programmer animation"
-        />
+        >
+          <source src="/videos/programmer.webm" type="video/webm" />
+          <img src="/images/programmer.gif" alt="programmer animation" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );

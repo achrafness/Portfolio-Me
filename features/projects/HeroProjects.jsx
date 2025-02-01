@@ -6,13 +6,17 @@ const HeroProjects = () => {
     <div className="flex flex-col md:flex-row mx-4 md:mx-16 my-8 md:my-0 h-full gap-8 md:gap-0 justify-center items-center">
       {/* Image Section */}
       <div className="flex w-full md:w-1/2 justify-center items-center">
-        <Image
-          src={prototyping}
-          height="450"
-          width="450"
-          className="size-[250px] sm:size-[300px] md:size-[375px]"
-          alt="Prototyping animation"
-        />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="size-[250px] sm:size-[300px] md:size-[375px]"
+      >
+        <source src="/videos/prototyping.webm" type="video/webm" />
+        <img src="/images/prototyping.gif" alt="Prototyping animation" />
+        Your browser does not support the video tag.
+      </video>
       </div>
 
       {/* Text Section */}
