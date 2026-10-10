@@ -29,7 +29,9 @@ export async function POST(request) {
     }
 
     // EMAIL: the Gmail account that sends the message, PASS: its app password
-    const { EMAIL, PASS } = process.env;
+    // Google shows app passwords as "abcd efgh ijkl mnop": drop the spaces and any pasted quotes
+    const EMAIL = (process.env.EMAIL ?? '').trim().replace(/^["']|["']$/g, '');
+    const PASS = (process.env.PASS ?? '').replace(/["'\s]/g, '');
     if (!EMAIL || !PASS) {
       console.error('Contact form: EMAIL and PASS are not set (see .env.example)');
       return json('The contact form is not configured yet', 500);
