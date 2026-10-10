@@ -1,47 +1,67 @@
 [
   {
-    "title": "Univ-repo",
-    "description": "A university repository for sharing educational resources.",
-    "images": ["/projects/univ-repo/01.jpg", "/projects/univ-repo/02.png"]
-  },
-  {
-    "title": "quiz-app",
-    "description": "An interactive quiz application for welcome day in Nexus , use some ai for validate the anwsers",
+    "title": "Quiz-App",
+    "description": "Real-time quiz app built for the Nexus Security Club welcome day, with AI-based answer grading.",
+    "date": "Oct 2024",
+    "tech": ["Socket.IO", "Express.js", "React.js"],
     "images": ["/projects/quiz-app/01.png", "/projects/quiz-app/02.png", "/projects/quiz-app/03.png", "/projects/quiz-app/04.png"]
   },
   {
-    "title": "cicada",
-    "description": "A  puzzle and challenge platform for nexus club.",
+    "title": "Univ-Repo",
+    "description": "A centralized repository of academic resources for Algerian computer science students.",
+    "date": "Jul 2024",
+    "tech": ["Express.js", "Next.js"],
+    "images": ["/projects/univ-repo/01.jpg", "/projects/univ-repo/02.png"]
+  },
+  {
+    "title": "Cicada",
+    "description": "The official CTF platform of Nexus Security Club.",
+    "tech": [],
     "images": ["/projects/cicada/01.png", "/projects/cicada/02.png"]
   },
   {
-    "title": "Faker",
-    "description": "A tool for generating realistic fake data for testing and development.",
-    "images": ["/projects/faker/01.png"]
-  },
-  {
-    "title": "portfolio-hamza",
-    "description": "A personal portfolio showcasing projects, skills, and experience.",
-    "images": ["/projects/hamaza_portfolio/01.png", "/projects/hamaza_portfolio/02.png", "/projects/hamaza_portfolio/03.png"]
+    "title": "XpressGen",
+    "description": "A customizable template generator that automates project setup with modular, reusable components.",
+    "date": "2025",
+    "tech": [],
+    "images": []
   },
   {
     "title": "EventMap",
-    "description": "An event management system for scientst club in univ.",
+    "description": "A platform to discover and join student events. Graded 19/20.",
+    "date": "May 2024",
+    "tech": [],
     "images": ["/projects/eventmap/01.png", "/projects/eventmap/02.png", "/projects/eventmap/03.png"]
   },
   {
     "title": "Dev-Challenges-GDG",
     "description": "A platform for Google Developer Group challenges -Batna- and coding competitions. (1st place)",
+    "date": "2024",
+    "tech": [],
     "images": ["/projects/gdg_challenge/01.png"]
   },
   {
     "title": "Dz-coders-challenge",
-    "description": "An Algerian coding challenge platform for competitive programmers (2nd place) .",
+    "description": "An Algerian coding challenge platform for competitive programmers. (2nd place)",
+    "tech": [],
     "images": ["/projects/dz_coder/01.png", "/projects/dz_coder/02.png", "/projects/dz_coder/03.png"]
+  },
+  {
+    "title": "Faker",
+    "description": "A tool for generating realistic fake data for testing and development.",
+    "tech": [],
+    "images": ["/projects/faker/01.png"]
+  },
+  {
+    "title": "portfolio-hamza",
+    "description": "A personal portfolio showcasing projects, skills, and experience.",
+    "tech": [],
+    "images": ["/projects/hamaza_portfolio/01.png", "/projects/hamaza_portfolio/02.png", "/projects/hamaza_portfolio/03.png"]
   },
   {
     "title": "ImageFlow",
     "description": "A dynamic image processing and filtering application.",
+    "tech": [],
     "images": []
   }
 ]

@@ -1,27 +1,27 @@
 const Certifications = () => {
     const certifications = [
       {
-        title: "Legacy JavaScript Data Structures & Algorithms",
-        organization: "source",
-        date: "Issue date",
+        title: "Certified Penetration Testing Specialist (CPTS)",
+        organization: "Hack The Box",
+        date: "2026 · in progress",
         position: "left",
       },
       {
-        title: "Introduction to programming with Python",
-        organization: "CS50",
-        date: "Issue date",
+        title: "CS50's Introduction to Programming with Python",
+        organization: "Harvard University · edX",
+        date: "2024",
         position: "right",
       },
       {
-        title: "Project-0 Hackathon 3rd place",
-        organization: "Elec Club",
-        date: "Issue date",
+        title: "Legacy JavaScript Algorithms and Data Structures",
+        organization: "freeCodeCamp",
+        date: "2024",
         position: "left",
       },
       {
-        title: "GDG Dev Challenges Backend dev 1st place",
-        organization: "GDG Batna",
-        date: "Aug 2024",
+        title: "Introduction to Cybersecurity",
+        organization: "Cisco Networking Academy",
+        date: "2024",
         position: "right",
       },
     ];
@@ -47,12 +47,12 @@ const Certifications = () => {
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-center md:${cert.position === "left" ? "justify-start" : "justify-end"
+                  className={`flex items-center justify-center ${cert.position === "left" ? "md:justify-start" : "md:justify-end"
                     }`}
                 >
                   {/* Timeline Content */}
                   <div
-                    className={`relative md:${cert.position === "left" ? "pr-4 md:pr-8 text-right" : "pl-4 md:pl-8 text-left"
+                    className={`relative ${cert.position === "left" ? "md:pr-8 text-right" : "md:pl-8 text-left"
                       } w-full md:w-[45%]`}
                   >
                     {/* Content Box */}

@@ -4,7 +4,7 @@ import {
   Greetings,
   FeaturedProjects,
   WhoAmI,
-  TechUsed
+  WhatIDo
 } from "@/features/home"
 const page = () => {
   return (
@@ -17,7 +17,7 @@ const page = () => {
             </div>
           </div>
       </div>
-      <TechUsed/>
+      <WhatIDo/>
       <WhoAmI/>
       <FeaturedProjects/>
       <Contact/>

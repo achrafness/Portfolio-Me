@@ -14,13 +14,15 @@ const FeaturedProjects = () => {
                 </p>
 
                 {/* Projects Grid */}
-                <div className="flex flex-wrap gap-8 justify-center items-center">
+                <div className="flex flex-wrap gap-8 justify-center items-stretch">
                     {featuredProjects.map((project, index) => (
                         <Project
                             key={index}
                             title={project.title}
                             description={project.description}
                             images={project.images}
+                            date={project.date}
+                            tech={project.tech}
                             interval={2000}
                         />
                     ))}

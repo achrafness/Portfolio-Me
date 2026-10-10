@@ -1,36 +1,43 @@
 import Logo from "../components/Logo";
-import email from "../public/icons/email.svg";
-import linkedin from "../public/icons/linkedin.svg";
-import github from "../public/icons/github-gray.svg";
-import facebook from "../public/icons/facebook.svg";
-import Image from "next/image";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
-  const apps = [email, linkedin, github, facebook];
+  const apps = [
+    { icon: Mail, label: "Email", href: "mailto:achraf.nessighaoui13@gmail.com" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/achraf-abdelouadoud-nessighaoui", external: true },
+    { icon: Github, label: "GitHub", href: "https://github.com/achrafness", external: true },
+  ];
 
   return (
-    <div className="bg-mirage py-5 borders-gray-top">
-      <div className="px-4 sm:px-8 md:px-16 lg:px-32 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
-        {/* Logo */}
-        <div className="mb-4 md:mb-0">
+    <footer className="bg-mirage py-6 md:py-8 borders-gray-top">
+      <div className="custom-container">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-5">
+          {/* Logo */}
           <Logo />
+
+          {/* Social Icons */}
+          <div className="flex gap-4">
+            {apps.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                aria-label={item.label}
+                title={item.label}
+                className="w-11 h-11 flex items-center justify-center rounded-xl border border-Pickled-Bluewoodapprox text-gray-300 hover:text-white hover:border-purple-heart hover:bg-purple-heart transition-colors"
+              >
+                <item.icon size={22} />
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* Social Icons */}
-        <div className="flex gap-8 md:gap-16">
-          {apps.map((item, index) => (
-            <div key={index} className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-              <Image
-                src={item}
-                alt={`Social icon ${index + 1}`}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
+        <p className="mt-5 pt-5 border-t border-Pickled-Bluewoodapprox text-center text-sm md:text-base text-gray-400">
+          © {new Date().getFullYear()} Achraf Nessighaoui
+        </p>
       </div>
-    </div>
+    </footer>
   );
 };
 
-export default Footer;  
+export default Footer;

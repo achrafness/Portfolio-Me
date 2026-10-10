@@ -5,7 +5,7 @@ import Typewriter from 'typewriter-effect/dist/core';
 const TypewriterComponent = () => {
   useEffect(() => {
     const typewriter = new Typewriter('#typewriter', {
-      strings: ['Full stack Dev', 'Cs Student'],
+      strings: ['Web Pentester', 'CTF Player', 'Red Teamer', 'Cybersecurity Student'],
       autoStart: true,
       loop: true,
       delay: 50,

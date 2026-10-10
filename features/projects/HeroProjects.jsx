@@ -24,9 +24,9 @@ const HeroProjects = () => {
         <div>
           <h2 className="text-purple-heart pb-4 md:pb-7">Projects</h2>
           <p className="text-xl md:text-3xl leading-7 md:leading-9">
-            This page showcases a collection of my full-stack development
-            projects, where I've transformed ideas into functional, user-centric
-            applications.
+            This page showcases a collection of my projects, from CTF
+            platforms and developer tools to real-time web apps, where
+            I've transformed ideas into functional, user-centric applications.
           </p>
         </div>
       </div>

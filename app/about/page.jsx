@@ -1,5 +1,5 @@
 import Navbar from "@/layout/Navbar"
-import { HeroAbout, Education, Skills, Certifications , InternshipsWork } from "@/features/about"
+import { HeroAbout, Education, Skills, Certifications , InternshipsWork, Awards } from "@/features/about"
 const page = () => {
   return (
     <div className="projects">
@@ -15,6 +15,7 @@ const page = () => {
       <Skills />
       <Certifications />
       <InternshipsWork/>
+      <Awards />
     </div>
   )
 }

@@ -20,9 +20,10 @@ const HeroAbout = () => {
         <div>
           <h2 className="text-purple-heart pb-4 md:pb-7">About Me</h2>
           <p className="text-xl md:text-3xl leading-7 md:leading-9">
-            I am Achraf, a computer science student with many interests, and a
-            broad set of skills that extend beyond the keyboard and screen. I
-            hope this section gives you an idea on my skills and what I can do.
+            I am Achraf, a web pentester and CTF player from Khenchela,
+            Algeria. Passionate about offensive security, I am looking for
+            an R&amp;D engineering internship in advanced attack emulation
+            (Red Team).
           </p>
         </div>
       </div>

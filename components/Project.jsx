@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const Project = ({ title, description, images, interval = 3000 }) => {
+const Project = ({ title, description, images, date, tech = [], interval = 3000 }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // Automatic slideshow
@@ -23,25 +23,39 @@ const Project = ({ title, description, images, interval = 3000 }) => {
     };
 
     return (
-        <div className="rounded-3xl w-full sm:w-[400px] md:w-[500px] h-auto md:h-[620px] bg-mirage project text-white p-4 md:p-6">
+        <div className="rounded-3xl w-full sm:w-[400px] md:w-[500px] h-auto md:min-h-[620px] bg-mirage project text-white p-4 md:p-6">
             {/* Image Container */}
             <div
-                className="w-full h-[250px] sm:h-[300px] md:h-[380px] bg-white rounded-lg overflow-hidden"
+                className={`w-full h-[250px] sm:h-[300px] md:h-[380px] rounded-lg overflow-hidden ${images.length > 0 ? "bg-white" : "bg-grid borders-gray flex items-center justify-center"}`}
                 onMouseEnter={handleHover}
             >
-                {images.length > 0 && (
+                {images.length > 0 ? (
                     <img
                         src={images[currentImageIndex]}
                         alt={title}
                         className="w-full h-full object-cover rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-105"
                     />
+                ) : (
+                    <span className="text-4xl md:text-5xl text-Pickled-Bluewoodapprox">&lt; {title} /&gt;</span>
                 )}
             </div>
 
             {/* Text Content */}
             <div className="text-start py-2">
-                <h1 className="text-3xl md:text-[40px] text-purple-heart">{title}</h1>
+                <div className="flex justify-between items-baseline gap-4">
+                    <h1 className="text-3xl md:text-[40px] md:leading-tight text-purple-heart">{title}</h1>
+                    {date && <span className="text-sm md:text-base text-Pickled-Bluewoodapprox whitespace-nowrap">{date}</span>}
+                </div>
                 <p className="text-lg md:text-2xl mt-2">{description}</p>
+                {tech.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                        {tech.map((item) => (
+                            <span key={item} className="text-sm md:text-base px-3 py-1 rounded-full border border-purple-heart text-white">
+                                {item}
+                            </span>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );
