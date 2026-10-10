@@ -1,78 +1,62 @@
 import nodemailer from 'nodemailer';
 
+const json = (message, status) =>
+  new Response(JSON.stringify({ message }), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  });
+
 export async function POST(request) {
   try {
-    const { name, email, message } = await request.json();
-
-    console.log('Request Body:', { name, email, message });
+    const body = await request.json().catch(() => ({}));
+    const name = String(body.name ?? '').trim();
+    const email = String(body.email ?? '').trim();
+    const message = String(body.message ?? '').trim();
 
     // Validate required fields
     if (!name || !email || !message) {
-      return new Response(
-        JSON.stringify({ message: 'Please fill in all fields' }),
-        {
-          status: 400,
-          headers: { 'Content-Type': 'application/json' },
-        },
-      );
+      return json('Please fill in all fields', 400);
     }
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return new Response(
-        JSON.stringify({ message: 'Invalid email address' }),
-        {
-          status: 400,
-          headers: { 'Content-Type': 'application/json' },
-        },
-      );
+      return json('Invalid email address', 400);
     }
-    
+
+    if (name.length > 100 || email.length > 200 || message.length > 5000) {
+      return json('Your message is too long', 400);
+    }
+
+    // EMAIL: the Gmail account that sends the message, PASS: its app password
+    const { EMAIL, PASS } = process.env;
+    if (!EMAIL || !PASS) {
+      console.error('Contact form: EMAIL and PASS are not set (see .env.example)');
+      return json('The contact form is not configured yet', 500);
+    }
+
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.EMAIL, 
-        pass: process.env.PASS,
+        user: EMAIL,
+        pass: PASS,
       },
     });
 
-    // Verify the transporter
-    transporter.verify((error, success) => {
-      if (error) {
-        console.error('Transporter verification failed:', error);
-      } else {
-        console.log('Transporter is ready to send emails');
-      }
+    // Gmail only sends as the authenticated account, so the visitor goes in replyTo
+    await transporter.sendMail({
+      from: `"${name.replace(/["\r\n]/g, '')} (portfolio)" <${EMAIL}>`,
+      to: process.env.CONTACT_TO || EMAIL,
+      replyTo: email,
+      subject: `New Contact Form Submission from ${name.replace(/[\r\n]/g, ' ')}`,
+      text: `From: ${name} <${email}>\n\n${message}`,
     });
 
-    // Define the email options
-    const mailOptions = {
-      from: email, 
-      to: 'a_nessighaoui@estin.dz',
-      subject: `New Contact Form Submission from ${name}`,
-      text: message, 
-    };
-
-    // Send the email
-    const info = await transporter.sendMail(mailOptions);
-    console.log('Email sent:', info);
-
-    return new Response(
-      JSON.stringify({ message: 'Email sent successfully!' }),
-      {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      },
-    );
+    return json('Email sent successfully!', 200);
   } catch (error) {
     console.error('Error sending email:', error);
-    return new Response(
-      JSON.stringify({ message: 'Error sending email' }),
-      {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      },
-    );
+    return json('Error sending email', 500);
   }
 }

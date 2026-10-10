@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 import Image from "next/image";
 import GDG from "@/public/images/google-developers-seeklogo.png";
 import Nexus from "@/public/images/nexus.png";
@@ -26,12 +28,15 @@ const Education = () => {
     <div className="bg-mirage py-8 md:py-12 bg-grid borders-gray">
       <div className="custom-container">
         {/* Education Section */}
+        <Reveal>
         <h2 className="text-4xl md:text-6xl text-purple-heart text-center mb-8 md:mb-12">
           Education
         </h2>
+        </Reveal>
         <div className="text-white flex flex-col gap-8">
           {schools.map((item) => (
-            <div key={item.school} className="bg-mirage border-2 border-purple-heart rounded-2xl p-6 md:p-8">
+            <Parallax key={item.school} offset={15}>
+            <div className="bg-mirage border-2 border-purple-heart rounded-2xl p-6 md:p-8">
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 md:gap-6">
                 <h3 className="text-2xl md:text-4xl">{item.school}</h3>
                 <span className="text-purple-heart text-lg md:text-2xl whitespace-nowrap">{item.date}</span>
@@ -41,13 +46,16 @@ const Education = () => {
               </span>
               <p className="text-base md:text-xl mt-4">{item.details}</p>
             </div>
+            </Parallax>
           ))}
         </div>
 
         {/* Extracurricular Activities Section */}
+        <Reveal>
         <h2 className="text-4xl md:text-6xl text-purple-heart text-center mt-8 md:mt-12 mb-8 md:mb-12">
           Extracurricular Activities
         </h2>
+        </Reveal>
         <div className="text-white text-lg md:text-xl flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
           <div className="flex flex-col items-center gap-4 md:gap-6">
             <Image src={GDG} height={52} alt="GDG Batna Logo" />

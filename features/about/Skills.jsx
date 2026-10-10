@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 import Image from "next/image";
 import skillsAnimation from "@/public/images/skills_animation.gif";
 import Skill from "./Skill";
@@ -41,21 +43,25 @@ const Skills = () => {
   const softSkills = ["Leadership", "Problem solving", "Teamwork", "Creativity"];
 
   return (
-    <div className="bg-mirage py-8 md:py-12">
+    <div className="bg-mirage py-8 md:py-12 overflow-x-clip">
       <div className="custom-container">
+        <Reveal>
         <h2 className="text-4xl md:text-6xl text-purple-heart text-center mb-8 md:mb-12">
           Skills
         </h2>
+        </Reveal>
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
           {/* Skills List */}
           <div className="w-full lg:w-2/5 flex flex-col gap-8">
             {skillsData.map((skill, index) => (
-              <Skill key={skill.title} title={skill.title} skills={skill.skills} />
+              <Reveal key={skill.title} x={-80} delay={index * 0.12}>
+                <Skill title={skill.title} skills={skill.skills} />
+              </Reveal>
             ))}
           </div>
 
           {/* Animation Image */}
-          <div className="w-full lg:w-3/5 flex justify-center">
+          <Parallax offset={40} className="w-full lg:w-3/5 flex justify-center">
             <video
               autoPlay
               loop
@@ -67,7 +73,7 @@ const Skills = () => {
               <img src="/images/skills_animation.gif" alt="skills_animation animation" />
               Your browser does not support the video tag.
             </video>
-          </div>
+          </Parallax>
         </div>
 
         {/* Languages & Soft Skills */}

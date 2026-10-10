@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 const Certifications = () => {
     const certifications = [
       {
@@ -27,11 +28,13 @@ const Certifications = () => {
     ];
   
     return (
-      <div className="bg-mirage py-8 md:py-12 bg-grid borders-gray">
+      <div className="bg-mirage py-8 md:py-12 bg-grid borders-gray overflow-x-clip">
         <div className="custom-container">
+          <Reveal>
           <h2 className="text-4xl md:text-6xl text-purple-heart text-center mb-8 md:mb-12">
             Licenses & Certifications
           </h2>
+          </Reveal>
           <div className="relative">
             {/* Vertical Line in the Middle */}
             <div className="hidden md:block   absolute left-1/2 transform -translate-x-1/2 h-full w-1 md:w-2 bg-purple-heart"></div>
@@ -45,8 +48,9 @@ const Certifications = () => {
             {/* Certifications */}
             <div className="space-y-8 md:space-y-16">
               {certifications.map((cert, index) => (
-                <div
+                <Reveal
                   key={index}
+                  x={cert.position === "left" ? -80 : 80}
                   className={`flex items-center justify-center ${cert.position === "left" ? "md:justify-start" : "md:justify-end"
                     }`}
                 >
@@ -70,7 +74,7 @@ const Certifications = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>

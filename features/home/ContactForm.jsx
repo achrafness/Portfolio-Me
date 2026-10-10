@@ -28,7 +28,7 @@ const ContactForm = () => {
         setEmail('');
         setMessage('');
       } else {
-        setStatus('Error sending email');
+        setStatus(result.message || 'Error sending email');
       }
     } catch (error) {
       console.error('Error:', error);

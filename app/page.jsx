@@ -1,4 +1,5 @@
 import Navbar from "@/layout/Navbar";
+import DesignerCredit from "@/components/DesignerCredit";
 import {
   Contact,
   Greetings,
@@ -9,7 +10,7 @@ import {
 const page = () => {
   return (
     <div className="home">
-      <div className="hero bg-mirage h-screen">
+      <div className="hero bg-mirage h-screen overflow-hidden">
           <div className="h-full">
             <div className="py-8 h-full custom-container flex flex-col">
               <Navbar />
@@ -21,6 +22,7 @@ const page = () => {
       <WhoAmI/>
       <FeaturedProjects/>
       <Contact/>
+      <DesignerCredit/>
     </div>
   );
 };

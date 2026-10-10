@@ -1,3 +1,4 @@
+import Parallax from "@/components/Parallax";
 import Image from "next/image";
 import prototyping from "@/public/images/prototyping.gif";
 
@@ -5,7 +6,7 @@ const HeroProjects = () => {
   return (
     <div className="flex flex-col md:flex-row mx-4 md:mx-16 my-8 md:my-0 h-full gap-8 md:gap-0 justify-center items-center">
       {/* Image Section */}
-      <div className="flex w-full md:w-1/2 justify-center items-center">
+      <Parallax fromTop speed={0.15} className="flex w-full md:w-1/2 justify-center items-center">
       <video
         autoPlay
         loop
@@ -17,10 +18,10 @@ const HeroProjects = () => {
         <img src="/images/prototyping.gif" alt="Prototyping animation" />
         Your browser does not support the video tag.
       </video>
-      </div>
+      </Parallax>
 
       {/* Text Section */}
-      <div className="text-4xl md:text-5xl w-full md:w-1/2 flex justify-center md:justify-start items-center text-white text-center md:text-left">
+      <Parallax fromTop speed={0.3} fade className="text-4xl md:text-5xl w-full md:w-1/2 flex justify-center md:justify-start items-center text-white text-center md:text-left">
         <div>
           <h2 className="text-purple-heart pb-4 md:pb-7">Projects</h2>
           <p className="text-xl md:text-3xl leading-7 md:leading-9">
@@ -29,7 +30,7 @@ const HeroProjects = () => {
             I've transformed ideas into functional, user-centric applications.
           </p>
         </div>
-      </div>
+      </Parallax>
     </div>
   );
 };

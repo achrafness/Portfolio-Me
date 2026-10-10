@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 const InternshipsWork = () => {
   const experiences = [
     {
@@ -39,12 +41,15 @@ const InternshipsWork = () => {
   return (
     <div className="bg-mirage py-8 md:py-12">
       <div className="custom-container">
+        <Reveal>
         <h2 className="text-4xl md:text-6xl text-purple-heart text-center mb-8 md:mb-12">
           Internships & Work Experience
         </h2>
+        </Reveal>
         <div className="flex flex-col gap-8 w-full text-white">
           {experiences.map((item) => (
-            <div key={item.title} className="bg-mirage border-2 border-purple-heart rounded-2xl p-6 md:p-8">
+            <Parallax key={item.title} offset={15}>
+            <div className="bg-mirage border-2 border-purple-heart rounded-2xl p-6 md:p-8">
               <h3 className="text-3xl md:text-5xl">{item.title}</h3>
               <span className="block text-purple-heart text-xl md:text-3xl mt-1">
                 {item.organization} · {item.date}
@@ -56,6 +61,7 @@ const InternshipsWork = () => {
                 ))}
               </ul>
             </div>
+            </Parallax>
           ))}
         </div>
       </div>

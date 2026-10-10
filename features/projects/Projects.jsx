@@ -1,3 +1,4 @@
+import Parallax from "@/components/Parallax";
 import Project from "@/components/Project"
 import projectsData from "@/data/projects.json"; 
 
@@ -7,8 +8,8 @@ const Projects = () => {
             <div className="custom-container">
                 <div className="flex md:col-span-6 col-span-12 flex-wrap gap-8 justify-center items-stretch">
                 {projectsData.map((project, index) => (
+                        <Parallax key={index} offset={index % 2 ? 40 : 15} delay={(index % 2) * 0.15} className="w-full sm:w-auto flex">
                         <Project
-                            key={index}
                             title={project.title}
                             description={project.description}
                             images={project.images}
@@ -16,6 +17,7 @@ const Projects = () => {
                             tech={project.tech}
                             interval={2000} 
                         />
+                        </Parallax>
                     ))}
                 </div>
             </div>

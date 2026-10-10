@@ -3,7 +3,7 @@ import { HeroAbout, Education, Skills, Certifications , InternshipsWork, Awards 
 const page = () => {
   return (
     <div className="projects">
-      <div className="hero bg-mirage h-screen">
+      <div className="hero bg-mirage h-screen overflow-hidden">
           <div className="h-full">
             <div className="py-8 h-full custom-container flex flex-col">
             <Navbar />

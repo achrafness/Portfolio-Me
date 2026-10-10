@@ -77,6 +77,12 @@
 .bg-grid {
   background-image: url("../public/images/grid.png");
 }
+/* parallax: the grid stays fixed while the content scrolls over it */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .bg-grid {
+    background-attachment: fixed;
+  }
+}
 
 .input-contact {
   border: 1px solid #37545f;
