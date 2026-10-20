@@ -13,6 +13,7 @@ const HeroAbout = () => {
           width="500"
           className="size-[250px] sm:size-[350px] md:size-[420px]"
           alt="Picture of the author"
+          priority
         />
       </Parallax>
 

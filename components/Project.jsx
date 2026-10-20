@@ -1,19 +1,23 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import { useInView } from "framer-motion";
 
 const Project = ({ title, description, images, date, tech = [], interval = 3000 }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const ref = useRef(null);
+    const inView = useInView(ref, { amount: 0.3 });
 
-    // Automatic slideshow
+    // Automatic slideshow, only while the card is on screen
     useEffect(() => {
-        if (images.length > 1) {
+        if (inView && images.length > 1) {
             const timer = setInterval(() => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
             }, interval);
 
             return () => clearInterval(timer); // Cleanup on unmount
         }
-    }, [images.length, interval]);
+    }, [inView, images.length, interval]);
 
     // Change image on hover
     const handleHover = () => {
@@ -26,14 +30,18 @@ const Project = ({ title, description, images, date, tech = [], interval = 3000 
         <div className="rounded-3xl w-full sm:w-[400px] md:w-[500px] h-auto md:min-h-[620px] bg-mirage project text-white p-4 md:p-6">
             {/* Image Container */}
             <div
-                className={`w-full h-[250px] sm:h-[300px] md:h-[380px] rounded-lg overflow-hidden ${images.length > 0 ? "bg-white" : "bg-grid borders-gray flex items-center justify-center"}`}
+                ref={ref}
+                className={`relative w-full h-[250px] sm:h-[300px] md:h-[380px] rounded-lg overflow-hidden ${images.length > 0 ? "bg-white" : "bg-grid borders-gray flex items-center justify-center"}`}
                 onMouseEnter={handleHover}
             >
                 {images.length > 0 ? (
-                    <img
+                    // next/image serves a resized WebP/AVIF instead of the full 1920px PNG
+                    <Image
                         src={images[currentImageIndex]}
                         alt={title}
-                        className="w-full h-full object-cover rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-105"
+                        fill
+                        sizes="(max-width: 640px) 100vw, 500px"
+                        className="object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-105"
                     />
                 ) : (
                     <span className="text-4xl md:text-5xl text-Pickled-Bluewoodapprox">&lt; {title} /&gt;</span>

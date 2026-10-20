@@ -37,7 +37,7 @@ const Awards = () => {
           {awards.map((award, index) => (
             <Parallax key={`${award.year}-${award.event}`} offset={[10, 20, 30][index % 3]} delay={(index % 3) * 0.12}>
             <div
-              className="h-full bg-[rgba(19,32,38,0.8)] project rounded-2xl p-6 backdrop-blur-sm flex flex-col gap-2"
+              className="h-full bg-[rgba(19,32,38,0.92)] project rounded-2xl p-6 flex flex-col gap-2"
             >
               <div className="flex justify-between items-baseline">
                 <span className="text-2xl md:text-3xl text-purple-heart">{award.place}</span>

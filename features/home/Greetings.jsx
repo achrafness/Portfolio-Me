@@ -1,4 +1,5 @@
 import Parallax from "@/components/Parallax";
+import AutoplayVideo from "@/components/AutoplayVideo";
 import TypewriterComponent from "@/components/TypewriterComponent";
 
 const Greetings = () => {
@@ -16,17 +17,7 @@ const Greetings = () => {
 
       {/* Image Section */}
       <Parallax fromTop speed={0.3} className="flex w-full md:w-1/2 justify-center items-center">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="size-[300px] md:size-[400px]"
-        >
-          <source src="/videos/programmer.webm" type="video/webm" />
-          <img src="/images/programmer.gif" alt="programmer animation" />
-          Your browser does not support the video tag.
-        </video>
+        <AutoplayVideo src="/videos/programmer.webm" className="size-[300px] md:size-[400px]" />
       </Parallax>
     </div>
   );

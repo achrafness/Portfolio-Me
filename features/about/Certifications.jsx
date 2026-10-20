@@ -60,7 +60,7 @@ const Certifications = () => {
                       } w-full md:w-[45%]`}
                   >
                     {/* Content Box */}
-                    <div className={`bg-[rgba(19,32,38,0.8)] ${cert.position === "left" ? "content-box-left" : "content-box-right"} p-4 md:p-6 rounded-lg backdrop-blur-sm border-2 border-purple-heart flex flex-col h-[200px] justify-between`}>
+                    <div className={`bg-[rgba(19,32,38,0.92)] ${cert.position === "left" ? "content-box-left" : "content-box-right"} p-4 md:p-6 rounded-lg border-2 border-purple-heart flex flex-col h-[200px] justify-between`}>
                       <h3 className="text-white text-left text-xl  md:text-3xl font-medium mb-2 md:mb-3">
                         {cert.title}
                       </h3>

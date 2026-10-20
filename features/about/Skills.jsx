@@ -1,7 +1,6 @@
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
-import Image from "next/image";
-import skillsAnimation from "@/public/images/skills_animation.gif";
+import AutoplayVideo from "@/components/AutoplayVideo";
 import Skill from "./Skill";
 
 const Skills = () => {
@@ -62,17 +61,7 @@ const Skills = () => {
 
           {/* Animation Image */}
           <Parallax offset={40} className="w-full lg:w-3/5 flex justify-center">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full max-w-[700px]"
-            >
-              <source src="/videos/skills_animation.webm" type="video/webm" />              
-              <img src="/images/skills_animation.gif" alt="skills_animation animation" />
-              Your browser does not support the video tag.
-            </video>
+            <AutoplayVideo src="/videos/skills_animation.webm" className="w-full max-w-[700px]" />
           </Parallax>
         </div>
 

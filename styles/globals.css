@@ -27,13 +27,8 @@
   }
 }
 
-@font-face {
-  font-family: "Power Grotesk";
-  src: url("/fonts/PowerGrotesk-Regular.ttf") format("truetype");
-}
-
 * {
-  font-family: "Power Grotesk", sans-serif;
+  font-family: var(--font-power-grotesk), sans-serif;
 }
 
 /* start home */
@@ -77,10 +72,23 @@
 .bg-grid {
   background-image: url("../public/images/grid.png");
 }
-/* parallax: the grid stays fixed while the content scrolls over it */
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-  .bg-grid {
-    background-attachment: fixed;
+/* parallax drift: moves from +offset to -offset px while the element crosses the
+   viewport. Scroll-driven CSS animation, so it runs off the main thread.
+   Browsers without support simply skip the drift. */
+@keyframes parallax-drift {
+  from {
+    translate: 0 var(--drift);
+  }
+  to {
+    translate: 0 calc(var(--drift) * -1);
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .parallax-drift {
+      animation: parallax-drift linear both;
+      animation-timeline: view();
+    }
   }
 }
 

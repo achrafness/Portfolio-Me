@@ -1,23 +1,12 @@
 import Parallax from "@/components/Parallax";
-import Image from "next/image";
-import prototyping from "@/public/images/prototyping.gif";
+import AutoplayVideo from "@/components/AutoplayVideo";
 
 const HeroProjects = () => {
   return (
     <div className="flex flex-col md:flex-row mx-4 md:mx-16 my-8 md:my-0 h-full gap-8 md:gap-0 justify-center items-center">
       {/* Image Section */}
       <Parallax fromTop speed={0.15} className="flex w-full md:w-1/2 justify-center items-center">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="size-[250px] sm:size-[300px] md:size-[375px]"
-      >
-        <source src="/videos/prototyping.webm" type="video/webm" />
-        <img src="/images/prototyping.gif" alt="Prototyping animation" />
-        Your browser does not support the video tag.
-      </video>
+      <AutoplayVideo src="/videos/prototyping.webm" className="size-[250px] sm:size-[300px] md:size-[375px]" />
       </Parallax>
 
       {/* Text Section */}

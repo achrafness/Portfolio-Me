@@ -31,7 +31,7 @@ const WhatIDo = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
                     {areas.map((item, index) => (
                         <Parallax key={item.title} offset={[10, 20, 30][index % 3]} delay={index * 0.12}>
-                        <div className="h-full bg-[rgba(19,32,38,0.8)] project rounded-2xl p-6 backdrop-blur-sm flex flex-col items-center text-center gap-3">
+                        <div className="h-full bg-[rgba(19,32,38,0.92)] project rounded-2xl p-6 flex flex-col items-center text-center gap-3">
                             <item.icon size={56} className="text-purple-heart" />
                             <h2 className="text-2xl md:text-3xl">{item.title}</h2>
                             <p className="text-base md:text-lg text-gray-300">{item.description}</p>
