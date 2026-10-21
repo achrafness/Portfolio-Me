@@ -1,31 +1,48 @@
 import Reveal from "@/components/Reveal";
 const Certifications = () => {
+    // newest first; cards alternate left/right on the timeline
     const certifications = [
       {
         title: "Certified Penetration Testing Specialist (CPTS)",
         organization: "Hack The Box",
         date: "2026 · in progress",
-        position: "left",
+      },
+      {
+        title: "Ethical Hacker",
+        organization: "Cisco Networking Academy",
+        date: "2026",
+      },
+      {
+        title: "Network Defense",
+        organization: "Cisco Networking Academy",
+        date: "2026",
+      },
+      {
+        title: "EF SET English Certificate · C1 Advanced (63/100)",
+        organization: "EF Education First",
+        date: "2026",
+      },
+      {
+        title: "TCF Tout public (French) · B2 (408/699)",
+        organization: "France Éducation international",
+        date: "2025",
       },
       {
         title: "CS50's Introduction to Programming with Python",
         organization: "Harvard University · edX",
         date: "2024",
-        position: "right",
       },
       {
         title: "Legacy JavaScript Algorithms and Data Structures",
         organization: "freeCodeCamp",
         date: "2024",
-        position: "left",
       },
       {
         title: "Introduction to Cybersecurity",
         organization: "Cisco Networking Academy",
         date: "2024",
-        position: "right",
       },
-    ];
+    ].map((cert, index) => ({ ...cert, position: index % 2 ? "right" : "left" }));
   
     return (
       <div className="bg-mirage py-8 md:py-12 bg-grid borders-gray overflow-x-clip">

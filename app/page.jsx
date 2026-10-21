@@ -1,9 +1,9 @@
 import Navbar from "@/layout/Navbar";
 import DesignerCredit from "@/components/DesignerCredit";
+import Awards from "@/features/about/Awards";
 import {
   Contact,
   Greetings,
-  FeaturedProjects,
   WhoAmI,
   WhatIDo
 } from "@/features/home"
@@ -20,7 +20,7 @@ const page = () => {
       </div>
       <WhatIDo/>
       <WhoAmI/>
-      <FeaturedProjects/>
+      <Awards featuredOnly />
       <Contact/>
       <DesignerCredit/>
     </div>
