@@ -1,5 +1,56 @@
 [
   {
+    "title": "SafeGuardX",
+    "description": "LLM safety classifiers that detect prompt injection, jailbreaks and policy violations in AI conversations. Built for the Gray Swan Arena blue-team challenge: SafeGuardX v1, v2 and a fine-tuned PromptGuard.",
+    "date": "2026",
+    "tech": ["Transformers", "PyTorch", "Qwen3", "Hugging Face"],
+    "images": ["/projects/safeguardx/01.webp"],
+    "links": [{ "type": "huggingface", "label": "Hugging Face", "href": "https://huggingface.co/achrafness" }]
+  },
+  {
+    "title": "SecureMind-AI",
+    "description": "AI-powered security platform combining network intrusion detection, trained on CICIDS2017 (99.8% accuracy), and phishing email detection (95.6% accuracy).",
+    "date": "2026",
+    "tech": ["Python", "scikit-learn", "Jupyter"],
+    "images": ["/projects/securemind/01.webp", "/projects/securemind/02.webp"],
+    "links": [{ "type": "github", "label": "GitHub", "href": "https://github.com/achrafness/SecureMind-AI" }]
+  },
+  {
+    "title": "Cicada",
+    "description": "The official CTF platform of Nexus Security Club.",
+    "tech": [],
+    "images": ["/projects/cicada/01.png", "/projects/cicada/02.png"]
+  },
+  {
+    "title": "Flag Finder",
+    "description": "Flag-guessing game with region filters and live autocomplete. One wrong guess ends the run.",
+    "date": "2026",
+    "tech": ["Python", "Flask", "JavaScript"],
+    "images": ["/projects/flag-finder/01.webp", "/projects/flag-finder/02.webp"],
+    "links": [
+      { "type": "live", "label": "Play", "href": "https://flag-finder-game.vercel.app" },
+      { "type": "github", "label": "GitHub", "href": "https://github.com/achrafness/flag-finder" }
+    ]
+  },
+  {
+    "title": "ImageFlow",
+    "description": "Desktop app that converts iPhone HEIC photos to JPG, PNG and other formats in bulk, fully offline. Ready-to-run builds for Windows, macOS and Linux.",
+    "date": "2025",
+    "tech": ["Python", "PyQt6", "Pillow"],
+    "images": ["/projects/imageflow/01.webp", "/projects/imageflow/02.webp", "/projects/imageflow/03.webp", "/projects/imageflow/04.webp"],
+    "links": [
+      { "type": "download", "label": "Download", "href": "https://github.com/achrafness/ImageFlow/releases/latest" },
+      { "type": "github", "label": "GitHub", "href": "https://github.com/achrafness/ImageFlow" }
+    ]
+  },
+  {
+    "title": "XpressGen",
+    "description": "A customizable template generator that automates project setup with modular, reusable components.",
+    "date": "2025",
+    "tech": [],
+    "images": []
+  },
+  {
     "title": "Quiz-App",
     "description": "Real-time quiz app built for the Nexus Security Club welcome day, with AI-based answer grading.",
     "date": "Oct 2024",
@@ -14,19 +65,6 @@
     "images": ["/projects/univ-repo/01.jpg", "/projects/univ-repo/02.png"]
   },
   {
-    "title": "Cicada",
-    "description": "The official CTF platform of Nexus Security Club.",
-    "tech": [],
-    "images": ["/projects/cicada/01.png", "/projects/cicada/02.png"]
-  },
-  {
-    "title": "XpressGen",
-    "description": "A customizable template generator that automates project setup with modular, reusable components.",
-    "date": "2025",
-    "tech": [],
-    "images": []
-  },
-  {
     "title": "EventMap",
     "description": "A platform to discover and join student events. Graded 19/20.",
     "date": "May 2024",
@@ -38,30 +76,28 @@
     "description": "A platform for Google Developer Group challenges -Batna- and coding competitions. (1st place)",
     "date": "2024",
     "tech": [],
-    "images": ["/projects/gdg_challenge/01.png"]
+    "images": ["/projects/gdg_challenge/01.png"],
+    "links": [{ "type": "github", "label": "GitHub", "href": "https://github.com/achrafness/Dev-Challenges-GDG" }]
   },
   {
     "title": "Dz-coders-challenge",
     "description": "An Algerian coding challenge platform for competitive programmers. (2nd place)",
     "tech": [],
-    "images": ["/projects/dz_coder/01.png", "/projects/dz_coder/02.png", "/projects/dz_coder/03.png"]
+    "images": ["/projects/dz_coder/01.png", "/projects/dz_coder/02.png", "/projects/dz_coder/03.png"],
+    "links": [{ "type": "github", "label": "GitHub", "href": "https://github.com/achrafness/Dz-coders-challenge" }]
   },
   {
     "title": "Faker",
     "description": "A tool for generating realistic fake data for testing and development.",
     "tech": [],
-    "images": ["/projects/faker/01.png"]
+    "images": ["/projects/faker/01.png"],
+    "links": [{ "type": "github", "label": "GitHub", "href": "https://github.com/achrafness/Faker" }]
   },
   {
     "title": "portfolio-hamza",
     "description": "A personal portfolio showcasing projects, skills, and experience.",
     "tech": [],
-    "images": ["/projects/hamaza_portfolio/01.png", "/projects/hamaza_portfolio/02.png", "/projects/hamaza_portfolio/03.png"]
-  },
-  {
-    "title": "ImageFlow",
-    "description": "A dynamic image processing and filtering application.",
-    "tech": [],
-    "images": []
+    "images": ["/projects/hamaza_portfolio/01.png", "/projects/hamaza_portfolio/02.png", "/projects/hamaza_portfolio/03.png"],
+    "links": [{ "type": "github", "label": "GitHub", "href": "https://github.com/achrafness/portfolio-hamza" }]
   }
 ]

@@ -2,8 +2,11 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useInView } from "framer-motion";
+import { Download, ExternalLink, Github } from "lucide-react";
 
-const Project = ({ title, description, images, date, tech = [], interval = 3000 }) => {
+const linkIcons = { github: Github, download: Download };
+
+const Project = ({ title, description, images, date, tech = [], links = [], interval = 3000 }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const ref = useRef(null);
     const inView = useInView(ref, { amount: 0.3 });
@@ -27,7 +30,7 @@ const Project = ({ title, description, images, date, tech = [], interval = 3000 
     };
 
     return (
-        <div className="rounded-3xl w-full sm:w-[400px] md:w-[500px] h-auto md:min-h-[620px] bg-mirage project text-white p-4 md:p-6">
+        <div className="rounded-3xl w-full sm:w-[400px] md:w-[500px] h-auto md:min-h-[620px] bg-mirage project text-white p-4 md:p-6 flex flex-col">
             {/* Image Container */}
             <div
                 ref={ref}
@@ -49,7 +52,7 @@ const Project = ({ title, description, images, date, tech = [], interval = 3000 
             </div>
 
             {/* Text Content */}
-            <div className="text-start py-2">
+            <div className="text-start py-2 flex flex-col flex-1">
                 <div className="flex justify-between items-baseline gap-4">
                     <h1 className="text-3xl md:text-[40px] md:leading-tight text-purple-heart">{title}</h1>
                     {date && <span className="text-sm md:text-base text-Pickled-Bluewoodapprox whitespace-nowrap">{date}</span>}
@@ -62,6 +65,25 @@ const Project = ({ title, description, images, date, tech = [], interval = 3000 
                                 {item}
                             </span>
                         ))}
+                    </div>
+                )}
+                {links.length > 0 && (
+                    <div className="flex flex-wrap gap-3 mt-auto pt-4">
+                        {links.map((link) => {
+                            const Icon = linkIcons[link.type] ?? ExternalLink;
+                            return (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-sm md:text-base px-4 py-2 rounded-xl bg-purple-heart hover:bg-purple-700 transition-colors"
+                                >
+                                    <Icon size={18} />
+                                    {link.label}
+                                </a>
+                            );
+                        })}
                     </div>
                 )}
             </div>

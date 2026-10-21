@@ -15,6 +15,7 @@ const Projects = () => {
                             images={project.images}
                             date={project.date}
                             tech={project.tech}
+                            links={project.links}
                             interval={2000} 
                         />
                         </Parallax>
