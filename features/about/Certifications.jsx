@@ -73,11 +73,11 @@ const Certifications = () => {
                 >
                   {/* Timeline Content */}
                   <div
-                    className={`relative ${cert.position === "left" ? "md:pr-8 text-right" : "md:pl-8 text-left"
-                      } w-full md:w-[45%]`}
+                    className={`${cert.position === "left" ? "md:pr-12 text-right" : "md:pl-12 text-left"
+                      } w-full md:w-1/2`}
                   >
                     {/* Content Box */}
-                    <div className={`bg-[rgba(19,32,38,0.92)] ${cert.position === "left" ? "content-box-left" : "content-box-right"} p-4 md:p-6 rounded-lg border-2 border-purple-heart flex flex-col h-[200px] justify-between`}>
+                    <div className={`relative bg-[rgba(19,32,38,0.92)] ${cert.position === "left" ? "content-box-left" : "content-box-right"} p-4 md:p-6 rounded-lg border-2 border-purple-heart flex flex-col h-[200px] justify-between`}>
                       <h3 className="text-white text-left text-xl  md:text-3xl font-medium mb-2 md:mb-3">
                         {cert.title}
                       </h3>
