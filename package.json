@@ -13,16 +13,26 @@
     "framer-motion": "^12.0.6",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.474.0",
-    "next": "14.2.5",
-    "nodemailer": "^6.10.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "sharp": "^0.33.5",
+    "next": "^15.5.28",
+    "nodemailer": "^10.1.7",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sharp": "^0.35.5",
     "tailwind-merge": "^2.6.0",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "postcss": "^8",
+    "postcss": "^8.5.31",
     "tailwindcss": "^3.4.1"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "$postcss"
+    },
+    "typewriter-effect": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "postcss-selector-parser": "^7.1.6"
   }
 }
